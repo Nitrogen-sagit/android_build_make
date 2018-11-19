@@ -31,6 +31,8 @@ echo "ro.product.model=$PRODUCT_MODEL"
 echo "ro.product.brand=$PRODUCT_BRAND"
 echo "ro.product.name=$PRODUCT_NAME"
 echo "ro.product.device=$TARGET_DEVICE"
+echo "ro.opendelta.device=${TARGET_DEVICE#*_}"
+echo "ro.opendelta.version=P-${TARGET_DEVICE#*_}-$(cat $OUT_DIR/target/product/${TARGET_DEVICE#*_}/build_date_time.txt)"
 
 echo "ro.nitrogen.device=$TARGET_DEVICE"
 echo "org.nitrogen.version=Nitrogen-OS-P-$TARGET_DEVICE-$(date +"%Y%m%d")"
